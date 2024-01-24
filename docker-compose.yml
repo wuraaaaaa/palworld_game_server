@@ -23,7 +23,7 @@ services:
       - PUBLIC_PORT=8211
       - ADMIN_PASSWORD=admin123
       - BACKUP_ENABLED=true
-      - BACKUP_CRON_EXPRESSION=0 * * * *
+      - BACKUP_CRON_EXPRESSION=*/10 * * * *
       - COMMUNITY_SERVER=false
       - SERVER_NAME=Palworld Private Server-###RANDOM###
       - SERVER_DESCRIPTION=Palworld Private Server
