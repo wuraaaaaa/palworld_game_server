@@ -1,6 +1,8 @@
+version: '3.9'  
 services:
-  palworld:
+  palworld-dedicated-server:
     image: jammsen/palworld-dedicated-server:latest
+    container_name: palworld-dedicated-server 
     restart: always
     network_mode: bridge
     ports:
@@ -17,23 +19,23 @@ services:
       - ALWAYS_UPDATE_ON_START=true
       - MAX_PLAYERS=32
       - MULTITHREAD_ENABLED=true
-      - COMMUNITY_SERVER=false
       - RCON_ENABLED=true
       - PUBLIC_PORT=8211
-      - SERVER_NAME=Palworld Private Server-###RANDOM###
-      - SERVER_DESCRIPTION=Palworld Private Server
-      - SERVER_PASSWORD=server123
       - ADMIN_PASSWORD=admin123
       - BACKUP_ENABLED=true
       - BACKUP_CRON_EXPRESSION=0 * * * *
+      - COMMUNITY_SERVER=false
+      # Enable the environment variables below if you have COMMUNITY_SERVER=true
+      #- SERVER_NAME=Palworld Private Server-###RANDOM###
+      #- SERVER_DESCRIPTION=Palworld Private Server
+      #- SERVER_PASSWORD=server123
+      
+      
     volumes:
       - ./game:/palworld
+    
+    # fix bug
     deploy:
       resources:
         limits:
           memory: 10G
-
-  rcon:
-    image: outdead/rcon:latest
-    entrypoint: ['/rcon', '-a', 'palworld:25575', '-p', 'admin123']
-    profiles: ['rcon']
