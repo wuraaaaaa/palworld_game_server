@@ -1,0 +1,35 @@
+services:
+  palworld:
+    image: jammsen/palworld-dedicated-server:latest
+    restart: on-failure:3
+    ports:
+      - "8211:8211/udp"
+      - "25575:25575/udp"
+      - "25575:25575/tcp"
+    environment:
+      - TIMEZONE=Asia/Shanghai
+      - ALWAYS_UPDATE_ON_START=true
+      - MAX_PLAYERS=32
+      - MULTITHREAD_ENABLED=true
+      - COMMUNITY_SERVER=false
+      - RCON_ENABLED=true
+      - RCON_PORT=25575
+      - PUBLIC_IP=127.0.0.1
+      - PUBLIC_PORT=8211
+      - SERVER_NAME=Palworld Private Server-###RANDOM###
+      - SERVER_DESCRIPTION=Palworld Private Server
+      - SERVER_PASSWORD=server#Password%Here
+      - ADMIN_PASSWORD=admin#Password%Here
+      - BACKUP_ENABLED=true
+      - BACKUP_CRON_EXPRESSION=0 * * * *
+    volumes:
+      - ./game:/palworld
+    deploy:
+      resources:
+        limits:
+          memory: 10G
+
+  rcon:
+    image: outdead/rcon:latest
+    entrypoint: ['/rcon', '-a', 'palworld:25575', '-p', 'admin#Password%Here']
+    profiles: ['rcon']
