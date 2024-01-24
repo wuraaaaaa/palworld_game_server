@@ -25,10 +25,9 @@ services:
       - BACKUP_ENABLED=true
       - BACKUP_CRON_EXPRESSION=0 * * * *
       - COMMUNITY_SERVER=false
-      # Enable the environment variables below if you have COMMUNITY_SERVER=true
-      #- SERVER_NAME=Palworld Private Server-###RANDOM###
-      #- SERVER_DESCRIPTION=Palworld Private Server
-      #- SERVER_PASSWORD=server123
+      - SERVER_NAME=Palworld Private Server-###RANDOM###
+      - SERVER_DESCRIPTION=Palworld Private Server
+      - SERVER_PASSWORD=
       
       
     volumes:
