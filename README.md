@@ -2,7 +2,11 @@
 palword game server - Docker
 
 ## first use
-Create ```game``` sub-directories on your server directory
+
+```git clone https://github.com/wuraaaaaa/palworld_game_server.git```
+```cd palworld_game_server```
+```mkdir game```
+```chmod 777 game```
 
 init server
 ```./server.sh start```
