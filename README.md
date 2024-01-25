@@ -4,7 +4,8 @@ palword game server - Docker
 ## First Use 首次使用
 
 ### 1、Prepare 准备
-
+前提条件 需要有docker 和 docker-compose
+可直接使用 apt 等工具一键安装
 
 ```
 # 拉取代码
@@ -57,5 +58,8 @@ modify setting 修改配置: ```vi /game/Pal/Saved/Config/LinuxServer/PalWorldSe
 before start server,entry you host ip in docker-compose.yaml:rcon:entrypoint
 use command example ./admin.sh Info   (show the server info)
 
-## 推荐服务器
+# 免费服务器试用3个月：
+[立即领用云产品，开启云上实践之旅](https://free.aliyun.com/?crowd=personal&scm=20140722.M_10076474._.V_1&source=5176.11533457&userCode=iz3llmvf)
+
+# 推荐使用轻量云创建
 [【腾讯云】轻量新用户上云福利，2核2G4M 低至 65元/年 ， 超大容量云硬盘 0.5折起！ ](https://curl.qcloud.com/Kf680Hzd)
