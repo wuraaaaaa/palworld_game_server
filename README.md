@@ -17,7 +17,7 @@ cd palworld_game_server
 
 mkdir game
 
-chmod 777 game
+chmod 777 game/
 ```
 
 ### 2、Init Server 初始化服务器
