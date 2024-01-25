@@ -38,3 +38,7 @@ services:
       resources:
         limits:
           memory: 10G
+  rcon:
+    image: outdead/rcon:latest
+    entrypoint: ['/rcon', '-a', '192.168.1.66:25575', '-p', 'admin123']
+    profiles: ['rcon']

@@ -1,4 +1,4 @@
-# palword_game_server
+# palworld_game_server
 palword game server - Docker
 
 ## First Use
@@ -35,3 +35,7 @@ modify setting: ```vi /game/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini```
 ```
 /game/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 ```
+
+## user rcon
+before start server,entry you host ip in docker-compose.yaml:rcon:entrypoint
+use command example ./admin.sh Info   (show the server info)
